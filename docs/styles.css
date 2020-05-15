@@ -1,91 +1,137 @@
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-}
-
-main {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(244, 249, 233);
-}
-
-.navbar-button {
-    border: none;
-    background-color: transparent;
-    font-size: 20px;
-}
-
-.panels-open-btn {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-}
-
-.panels-close-btn {
-    position: absolute;
-    top: 30px;
-    right: 30px;
-}
-
-.nav-panels {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    transform: translateX(-100%);
-    transition: transform .3s ease-in-out;
-}
-
-.nav-panels.visible {
-    transform: translateX(0);
-}
-
-.nav-panel-1 {
-    background-color: rgb(1, 28, 39);
-    max-width: 480px;
-    min-width: 320px;
-    width: 60%;
-    transition-delay: .4s;
-}
-
-.nav-panel-1.visible {
-    transition-delay: 0s;
-}
-
-.nav-panel-2 {
-    background-color: rgb(132, 0, 50);
-    width: 95%;
-    transition-delay: .2s;
-}
-
-.nav-panel-3 {
-    background-color: rgb(244, 249, 233);
-    width: 95%;
-    padding: 40px;
-}
-
-.nav-panel-3.visible {
-    transition-delay: .4s;
-}
-
-.nav-bar-items {
-    margin-top: 2em;
-    padding: 0;
-    list-style-type: none;
-}
-
-.nav-bar-items li {
-    margin-top: 0.5em;
-}
-
-.nav-bar-items li a {
-    text-decoration: none;
-    color: rgb(31, 31, 31);
-    font-size: 1.2em;
-}
+    * {
+        box-sizing: border-box;
+    }
+    
+    body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        overflow: hidden;
+    }
+    
+    main {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #ffffff;
+    }
+    
+    .wrapper {
+        width: 550px;
+        height: 4em;
+        max-width: 100%;
+        border: 1px solid black;
+        border-radius: 5px;
+        text-align: center;
+    }
+    
+    .line {
+        width: 10px;
+        height: 10px;
+        max-width: 100%;
+        background-color: rgb(39, 251, 107);
+        border-radius: 50px;
+        position: absolute;
+        top: 50%;
+        animation: grow 3s linear forwards;
+        animation-iteration-count: infinite;
+        align-self: flex-start;
+        z-index: 2;
+    }
+    
+    @keyframes grow {
+        to {
+            width: 550px;
+        }
+    }
+    
+    .text1 {
+        font-weight: 500;
+        font-size: 3em;
+        margin: 0;
+        position: absolute;
+        text-align: center;
+        transform: translateX(6%);
+    }
+    
+    .overlay {
+        z-index: 3;
+    }
+    
+    .navbar-button {
+        border: none;
+        background-color: transparent;
+        font-size: 20px;
+    }
+    
+    .panels-open-btn {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+    }
+    
+    .panels-close-btn {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+    }
+    
+    .nav-panels {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        transform: translateX(-100%);
+        transition: transform .3s ease-in-out;
+        z-index: 100;
+    }
+    
+    .nav-panels.visible {
+        transform: translateX(0);
+        z-index: 100;
+    }
+    
+    .nav-panel-1 {
+        background-color: rgb(1, 28, 39);
+        max-width: 480px;
+        min-width: 320px;
+        width: 60%;
+        transition-delay: .4s;
+    }
+    
+    .nav-panel-1.visible {
+        transition-delay: 0s;
+    }
+    
+    .nav-panel-2 {
+        background-color: rgb(132, 0, 50);
+        width: 95%;
+        transition-delay: .2s;
+    }
+    
+    .nav-panel-3 {
+        background-color: rgb(244, 249, 233);
+        width: 95%;
+        padding: 40px;
+    }
+    
+    .nav-panel-3.visible {
+        transition-delay: .4s;
+    }
+    
+    .nav-bar-items {
+        margin-top: 2em;
+        padding: 0;
+        list-style-type: none;
+    }
+    
+    .nav-bar-items li {
+        margin-top: 0.5em;
+    }
+    
+    .nav-bar-items li a {
+        text-decoration: none;
+        color: rgb(31, 31, 31);
+        font-size: 1.2em;
+    }
