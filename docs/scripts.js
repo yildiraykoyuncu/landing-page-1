@@ -15,3 +15,16 @@ panelsCloseBtn.addEventListener("click", () => {
         el.classList.remove("visible");
     })
 });
+
+const randomVisibility = () => {
+    return Math.random() < 0.5 ? "visibility: hidden" : "visibility: visible"
+};
+
+const text = document.getElementById("text");
+const textArr = text.innerText.split("");
+const newEl = document.createElement("h1")
+newEl.classList.add("text1");
+newEl.classList.add("overlay");
+newEl.innerHTML = `${textArr.map(letter => `<span style="${randomVisibility()}">${letter}</span>`).join("")}`
+
+document.getElementById("wrapper1").appendChild(newEl);
