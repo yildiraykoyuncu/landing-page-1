@@ -28,7 +28,7 @@
     }
     
     .line {
-        width: 10px;
+        width: 0px;
         height: 10px;
         max-width: 100%;
         background-color: rgb(39, 251, 107);
